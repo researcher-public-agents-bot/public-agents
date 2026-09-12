@@ -5,7 +5,7 @@
   "name": "Cloudflare MCP servers",
   "kind": "service",
   "status": "active",
-  "summary": "Cloudflare's catalog of managed remote MCP servers: the Cloudflare API server (2,500+ endpoints behind search and execute tools) and sixteen product-specific servers on *.mcp.cloudflare.com (bindings, builds, observability, Radar, browser rendering, logs, AI Gateway, DNS analytics and more). One of the sixteen, the public Documentation server at docs.mcp.cloudflare.com, needs no authentication; the API server and the other product servers require OAuth or a token. Measured: the Documentation server answers with no credentials; the API and Radar servers answer 401. Code Apache-2.0.",
+  "summary": "Cloudflare's catalog of managed remote MCP servers: the Cloudflare API server (2,500+ endpoints behind search and execute tools), fifteen product-specific servers on *.mcp.cloudflare.com (bindings, builds, observability, Radar, browser rendering, logs, AI Gateway, DNS analytics and more), and an Agents SDK Documentation server on agents.cloudflare.com. Two need no authentication, both measured: the Documentation server at docs.mcp.cloudflare.com and the Agents SDK Documentation server; the API server and the other product servers require OAuth or a token (two measured 401). Code Apache-2.0.",
   "vendor": {
     "name": "Cloudflare, Inc.",
     "url": "https://www.cloudflare.com/",
@@ -16,7 +16,7 @@
   "agentAccess": {
     "noAccountNeeded": true,
     "auth": "none",
-    "notes": "Measured 2026-09-12 06:09Z, no credentials, cloud IP: Documentation server initialize 200 (docs-ai-search 0.4.13), tools/list 200 (2 tools), search_cloudflare_documentation 200 with results. API and Radar servers: 401 Bearer OAuth. Vendor: OAuth or an API token for the account-bound servers."
+    "notes": "Measured 2026-09-12, no credentials, cloud IP: Documentation server (docs.mcp.cloudflare.com) initialize 200, tools/list 2 tools, a search 200 (06:09Z); Agents SDK Documentation server (agents.cloudflare.com/mcp) initialize 200, tools/list 1 tool (18:02Z). API and Radar servers: 401 Bearer OAuth."
   },
   "surfaces": {
     "homepage": "https://www.cloudflare.com/",
