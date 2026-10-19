@@ -1,0 +1,55 @@
+{
+  "$schema": "https://public-agents.com/schemas/tool.schema.json",
+  "schemaVersion": 1,
+  "slug": "tavily-mcp",
+  "name": "Tavily MCP server",
+  "kind": "service",
+  "status": "active",
+  "summary": "Tavily's hosted MCP server at mcp.tavily.com/mcp/ gives an agent web search, URL extraction, crawl, map and research tools over the Tavily API. The vendor documents a keyless mode selected by one request header, and on 2026-10-19 it held: without the header initialize answered 401 with an OAuth challenge; with it initialize and tools/list answered 200 with no account, listing five tools where the vendor's keyless page says two endpoints are keyless. The direct API answered a keyless search with the header and 401 without.",
+  "vendor": {
+    "name": "AlphaAI Technologies Inc. dba Tavily",
+    "url": "https://www.tavily.com/",
+    "kind": "organization"
+  },
+  "license": "MIT (repository); hosted under Tavily's platform terms",
+  "pricing": "freemium",
+  "agentAccess": {
+    "noAccountNeeded": true,
+    "auth": "none",
+    "notes": "Keyless 2026-10-19 with the vendor's documented header X-Tavily-Access-Mode: keyless: initialize 200, tools/list 200 (five tools), one direct-API search 200. Without the header: 401 with a challenge naming the host's own OAuth issuer; an API key is the other path. Rate-limited, limits unstated."
+  },
+  "payments": {
+    "machinePayable": false,
+    "protocols": [],
+    "methods": [],
+    "humanBilling": "card-on-file",
+    "priceList": "https://www.tavily.com/pricing",
+    "notes": "2026-10-19: no keyless 402. Keyless free and rate-limited; a free key gives 1,000 credits a month, no card; paid plans from $30 a month and $0.008 a credit pay-as-you-go. Terms: subscriptions auto-renew against the payment method; Tavily may at its discretion accept cryptocurrency."
+  },
+  "surfaces": {
+    "homepage": "https://www.tavily.com/",
+    "docs": "https://docs.tavily.com/documentation/mcp",
+    "llmsTxt": "https://docs.tavily.com/llms.txt",
+    "skills": [],
+    "mcp": "https://mcp.tavily.com/mcp/",
+    "api": "https://docs.tavily.com/documentation/api-reference/endpoint/search",
+    "openapi": null,
+    "source": "https://github.com/tavily-ai/tavily-mcp"
+  },
+  "social": {
+    "github": "tavily-ai"
+  },
+  "domains": [
+    "tavily.com",
+    "www.tavily.com",
+    "docs.tavily.com",
+    "mcp.tavily.com",
+    "api.tavily.com"
+  ],
+  "maintainers": [],
+  "provenance": "third-party",
+  "jobs": [],
+  "created": "2026-10-19",
+  "updated": "2026-10-19",
+  "version": 1
+}
