@@ -5,7 +5,7 @@
   "name": "Tavily MCP server",
   "kind": "service",
   "status": "active",
-  "summary": "Tavily's hosted MCP server at mcp.tavily.com/mcp/ gives an agent web search, URL extraction, crawl, map and research tools over the Tavily API. The vendor documents a keyless mode selected by one request header, and on 2026-10-19 it held: without the header initialize answered 401 with an OAuth challenge; with it initialize and tools/list answered 200 with no account, listing five tools where the vendor's keyless page says two endpoints are keyless. The direct API answered a keyless search with the header and 401 without.",
+  "summary": "Tavily's hosted MCP server at mcp.tavily.com/mcp/ gives an agent search, extract, crawl, map and research tools over the Tavily API. The vendor documents a keyless mode selected by one request header, and on 2026-10-19 it held: without the header initialize answered 401 with an OAuth challenge; with it initialize and tools/list answered 200 with no account, listing five tools where the vendor's keyless page says two endpoints are keyless. The direct API answered a keyless search with the header and 401 without; the vendor's x402 endpoint answered 402 with a USDC price, as its page documents.",
   "vendor": {
     "name": "AlphaAI Technologies Inc. dba Tavily",
     "url": "https://www.tavily.com/",
@@ -19,12 +19,16 @@
     "notes": "Keyless 2026-10-19 with the vendor's documented header X-Tavily-Access-Mode: keyless: initialize 200, tools/list 200 (five tools), one direct-API search 200. Without the header: 401 with a challenge naming the host's own OAuth issuer; an API key is the other path. Rate-limited, limits unstated."
   },
   "payments": {
-    "machinePayable": false,
-    "protocols": [],
-    "methods": [],
+    "machinePayable": true,
+    "protocols": [
+      "x402"
+    ],
+    "methods": [
+      "stablecoin"
+    ],
     "humanBilling": "card-on-file",
     "priceList": "https://www.tavily.com/pricing",
-    "notes": "2026-10-19: no keyless 402. Keyless free and rate-limited; a free key gives 1,000 credits a month, no card; paid plans from $30 a month and $0.008 a credit pay-as-you-go. Terms: subscriptions auto-renew against the payment method; Tavily may at its discretion accept cryptocurrency."
+    "notes": "2026-10-19: no 402 from the MCP server keyless; x402.tavily.com/search answered 402, x402 v2, USDC on Base at 10000 units ($0.01 a call, as documented) beside an undocumented agent-pay entry at $0.016. Free key 1,000 credits a month, no card; plans from $30 a month; $0.008 a credit PAYG."
   },
   "surfaces": {
     "homepage": "https://www.tavily.com/",
@@ -44,7 +48,8 @@
     "www.tavily.com",
     "docs.tavily.com",
     "mcp.tavily.com",
-    "api.tavily.com"
+    "api.tavily.com",
+    "x402.tavily.com"
   ],
   "maintainers": [],
   "provenance": "third-party",
