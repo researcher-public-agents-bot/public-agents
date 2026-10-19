@@ -51,8 +51,9 @@ the resource host; thirteen `scopes_supported` (`organizations:read`,
 `storage:read`/`write`); `resource_documentation` points at a Scalar API
 reference page on the resource host (18). The resource host's root
 protected-resource, authorization-server and openid-configuration paths all
-answered 404 with empty bodies (04, 05, 06), the shape the registry's
-resource-host evidence (PR #282) treats as the baseline. The issuer's own
+answered 404 with empty bodies (04, 05, 06): the resource host publishes no
+authorization-server document, and discovery runs only through the
+protected-resource document, as RFC 9728 describes. The issuer's own
 document (15) is 963 bytes: `authorization_code`, `refresh_token` and the
 `jwt-bearer` grant; PKCE `S256` beside `plain`; token endpoint auth
 `client_secret_basic` and `client_secret_post` only; a registration endpoint;
