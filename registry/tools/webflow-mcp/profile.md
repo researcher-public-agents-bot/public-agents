@@ -11,7 +11,7 @@ as absent. The vendor supplied no proof and reviewed none of this.
 
 [Webflow](https://webflow.com/) is a hosted website platform. Its MCP server,
 in the vendor's words, "connects agents and AI tools directly to your Webflow
-projects" and "is built on Webflow's APIs, exposing them as tools your AI agent
+projects". "It's built on Webflow's APIs, exposing them as tools your AI agent
 can use to create elements, styles, components, and variables, manage
 collections, custom code, assets, and other site data, and read your site's
 analytics". The [how-it-works
@@ -106,8 +106,10 @@ server Webflow's.
 page](https://developers.webflow.com/data/docs/ai-tools), whose HTML path now
 308-redirects to the MCP overview while its `.md` twin still serves, gives
 `https://mcp.webflow-sai.com/sse` as the server URL inside its "Use Node
-Version Switcher" configuration, where every other example on the page says
-`mcp.webflow.com`. From this network that host answered a Cloudflare block page
+Version Switcher" configuration. The page names a server host in exactly one
+other place, the Windsurf example's `https://mcp.webflow.com/sse`; its Claude
+Desktop and Cursor sections go through a connector and a plugin and name no
+URL. From this network that host answered a Cloudflare block page
 to an `initialize`, to a GET of `/sse` and to its protected-resource path, and
 its apex answered an empty 403 from an AWS load balancer. The 403 record says
 what is not known: who holds the domain, and whether a client elsewhere reaches
@@ -180,7 +182,7 @@ reason. That is a limitation of the gate, recorded here as one.
 
 | Claim | Where it came from |
 | --- | --- |
-| What the server is, the tool groups, the limitations, the add-on requirements | [overview](https://developers.webflow.com/mcp/reference/overview), the vendor's own words |
+| What the server is, the tool groups, the limitations (the single-workspace sentence among them), the add-on requirements | [overview](https://developers.webflow.com/mcp/reference/overview), the vendor's own words. Three of the `mkt.publish-web-content` quotations sit in the page's "Manage" tab: they are absent from the delivered HTML with tags stripped and from the page as it first renders, present after that tab is selected, and present without a tab in the page's `.md` twin |
 | Remote host, Bridge App scope, Agent Instructions, governance | [how-it-works](https://developers.webflow.com/mcp/reference/how-it-works), the vendor's own words |
 | OAuth, owners and admins, the `webflow-sai.com` example | [ai-tools.md](https://developers.webflow.com/data/docs/ai-tools.md), the vendor's own words |
 | Documentation server URLs | [documentation-server](https://developers.webflow.com/mcp/installing/documentation-server) and [llms.txt](https://developers.webflow.com/llms.txt) |
