@@ -23,7 +23,7 @@
   "agentAccess": {
     "noAccountNeeded": false,
     "auth": "oauth",
-    "notes": "Measured 2026-10-20 18:32Z, no credentials: initialize at mcp.box.com and at its /mcp path both answer 401 with a challenge naming one protected-resource document (200, 406 B), which names api.box.com as sole authorization server; its metadata advertises S256 only, no registration endpoint, no CIMD."
+    "notes": "Measured 2026-10-20 18:33Z, no credentials: initialize at mcp.box.com and at its /mcp path both answer 401 with a challenge naming one protected-resource document (200, 406 B), which names api.box.com as sole authorization server; its metadata advertises S256 only, no registration endpoint, no CIMD."
   },
   "surfaces": {
     "homepage": "https://www.box.com/",
