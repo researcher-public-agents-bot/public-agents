@@ -38,8 +38,10 @@ no credential, no account, no payment, no cookie, nothing written**
 ### The vendor's other hosted endpoint is not this one, and the difference is the point
 
 `https://mcp.postman.com/mcp`, read in the same pass at **06:29:10.532Z**, answers the identical
-keyless `initialize` with **401** and
-`{"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request: API key required"}}`, beside a
+keyless `initialize` with **401** and a 97-byte body,
+`{"jsonrpc":"2.0","error":{"code":-32600,"message":"Invalid Request: API key required"},"id":null}`
+(sha256 `e1dad51f4f3c27c094d63ac085eb03a476e93b73fc496a6fb3a5c23817c968a7`, re-read keyless on
+2026-10-22 at 12:03:10.714Z at the same 97 bytes and the same digest), beside a
 Bearer-scheme challenge naming its own protected-resource document. That document answers **200, 239 bytes**:
 `resource_name` "Postman MCP Server", `resource_documentation` the vendor's product page, and
 `authorization_servers` **`["https://mcp.postman.com"]`**, which is the host serving the document.
