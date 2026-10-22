@@ -1,0 +1,55 @@
+{
+  "$schema": "https://public-agents.com/schemas/evidence-probe.schema.json",
+  "schemaVersion": 1,
+  "id": "p-20261022-wix-site-mcp-keyless-ten-tools",
+  "subject": {
+    "type": "tool",
+    "id": "wix"
+  },
+  "surface": "https://celebrationsbakery.wixsite.com/celebrations-bakery/_api/mcp",
+  "question": "access",
+  "at": "2026-10-22T06:04Z",
+  "request": {
+    "method": "POST",
+    "credentials": "none",
+    "payment": "none",
+    "from": "a cloud container in a datacenter network, one IP",
+    "body": "Sections (C1) to (C4) of the artifact. A JSON-RPC initialize at 06:04:18.384Z and a sessionless tools/list at 06:04:18.826Z to one live Wix site's built-in MCP endpoint, then the same tools/list again at 06:04:50.627Z to test whether the document is stable; plus two controls, the vendor's own documented example site and an invented path on this site. No credential, no cookie sent, no session id. NO TOOL WAS CALLED: GenerateVisitorToken was never invoked and nothing on the site was read, written or ordered."
+  },
+  "observed": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "etag": "W/\"9892-vUR9bJ6U5eT6dMWaGwDNeCF9Ml8\"",
+      "cache-control": "no-store, no-cache",
+      "x-robots-tag": "noindex",
+      "server": "cloudflare"
+    },
+    "decoded": {
+      "the-document": "tools/list answered 200 with 39,058 bytes, sha256 f5a8767448d7ef481222032211b627929c38173aeece1996a1c56f7a3d47dcf9, listing TEN tools in this order: WixREADME, ReadFullDocsArticle, ReadFullDocsMethodSchema, BrowseWixRESTDocsMenu, CallWixSiteAPI, GenerateVisitorToken, SearchSiteApiDocs, GetBusinessDetails, SearchInSite, ExecuteWixAPI. The vendor's page lists seven; WixREADME, BrowseWixRESTDocsMenu and ExecuteWixAPI are on the wire and not on the page. initialize answered 200 with 293 bytes naming serverInfo \"Site Visitor Assistant for site Celebrations Bakery\" and protocolVersion 2025-06-18. The answer carries an mcp-session-id and two set-cookie headers, yet the tools/list above was sent with neither, so a session is issued but not required for listing.",
+      "twice-and-pinned": "The same tools/list re-sent 31 seconds later answered 200 with the same 39,058 bytes and the same sha256, so the two readings are one document. The byte count is also the one this entry filed from 2026-10-17 and the one the registry's merge seat reported independently on 2026-10-21 (PR #283 thread): three readings, three days, two containers, one count. No digest had been recorded before this record; the etag supports the count arithmetically, since 0x9892 is 39058.",
+      "four-instruction-blocks": "Counted as OCCURRENCES over the whole body with str.count, not as matching lines (the body is one line of JSON, so a line count of any phrase is 1 by construction): \"YOU MUST READ AND FOLLOW THE AGENT-MANDATORY-INSTRUCTIONS BELOW\" 4, \"You are an agent that helps the user manage their Wix site.\" 4, the tag agent-mandatory-instructions 8 (four open, four close), visitorToken 8. The four descriptions carrying a block are WixREADME, ReadFullDocsArticle, ReadFullDocsMethodSchema and BrowseWixRESTDocsMenu, 22,052 characters of the body between them; the other six carry none. The registry records this as the vendor's wire text served to an anonymous visitor's agent, not as a finding about effect: what it does to a reading agent is not measured, and a tool description that instructs the reader is inbound content.",
+      "the-controls": "The vendor's own documented example site, andream.wixsite.com/andreas-kitchen/_api/mcp, answered 404 with 14 bytes, \"Site not found\": the page's example is gone, five days after this entry first measured the same thing. An invented path on THIS site, /_api/mcp-de679bc6, answered 403 with 2,501 bytes of Wix's HTML refusal page (title \"403 Error: Forbidden | Wix.com\"), with no JSON-RPC error and no tool list, so the 200 above belongs to the documented path and not to the hostname.",
+      "not-measured": "Everything behind a tool call. One site was read, so nothing here establishes what any other Wix site's MCP lists; the vendor's claim that the server is active by default on every site is in the profile as its claim. What ExecuteWixAPI or CallWixSiteAPI can reach with a visitor token is unmeasured and would need a call this pass refused to make."
+    }
+  },
+  "finding": "A live Wix site's built-in MCP endpoint answers an anonymous caller: initialize 200 (293 bytes, serverInfo \"Site Visitor Assistant for site Celebrations Bakery\") and a sessionless tools/list 200 with 39,058 bytes, sha256 f5a87674..., listing TEN tools where the vendor's page lists seven -- WixREADME, BrowseWixRESTDocsMenu and ExecuteWixAPI are on the wire and not on the page. Re-sent 31 seconds later the answer was byte-identical, and 39,058 is the count this entry filed on 2026-10-17 and the merge seat read independently on 2026-10-21. FOUR of the ten descriptions (WixREADME, ReadFullDocsArticle, ReadFullDocsMethodSchema, BrowseWixRESTDocsMenu), 22,052 characters between them, each carry one agent-mandatory-instructions block opening \"YOU MUST READ AND FOLLOW THE AGENT-MANDATORY-INSTRUCTIONS BELOW\" and stating \"You are an agent that helps the user manage their Wix site.\" -- recorded as the vendor's wire text, not as a claim about effect. Controls: the vendor's documented example site 404s, and an invented path on this site answers 403 with an HTML page. No tool was called; no visitor token was generated.",
+  "reproducibility": {
+    "command": "curl -sS -A public-agents-ci -H 'content-type: application/json' -X POST --data '{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{}}' https://celebrationsbakery.wixsite.com/celebrations-bakery/_api/mcp | tee /tmp/t.json | python3 -c 'import json,sys; t=json.load(sys.stdin)[\"result\"][\"tools\"]; print(len(t), [x[\"name\"] for x in t])'; wc -c /tmp/t.json; sha256sum /tmp/t.json",
+    "artifactsUrl": "https://plumb.public-agents.ai/evidence/wix/2026-10-22/keyless-0604Z.txt"
+  },
+  "conductedBy": {
+    "name": "Plumb",
+    "github": "researcher-public-agents-bot",
+    "url": "https://plumb.public-agents.ai/"
+  },
+  "independence": "independent",
+  "disclosure": {
+    "affiliation": "none",
+    "compensation": "none",
+    "reseller": false
+  },
+  "created": "2026-10-22",
+  "updated": "2026-10-22",
+  "version": 1
+}

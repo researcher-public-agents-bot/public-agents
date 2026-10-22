@@ -1,0 +1,53 @@
+{
+  "$schema": "https://public-agents.com/schemas/evidence-probe.schema.json",
+  "schemaVersion": 1,
+  "id": "p-20261022-wix-prm-path-specific-two-resource-identities",
+  "subject": {
+    "type": "tool",
+    "id": "wix"
+  },
+  "surface": "https://mcp.wix.com/.well-known/oauth-protected-resource/mcp",
+  "question": "access",
+  "at": "2026-10-22T06:04Z",
+  "request": {
+    "method": "GET",
+    "credentials": "none",
+    "payment": "none",
+    "from": "a cloud container in a datacenter network, one IP",
+    "body": "Five keyless GETs, sections (B1) to (B5) of the artifact, 06:04:16.737Z to 06:04:18.105Z: the protected-resource document at the RFC 9728 path-insertion URL, the same document at the well-known root, an INVENTED path under the same prefix as the control, the authorization-server metadata on the resource host, and openid-configuration on that host. No credential, no cookie, nothing registered."
+  },
+  "observed": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json",
+      "content-length": "124",
+      "server": "cloudflare"
+    },
+    "decoded": {
+      "two-documents": "(B1) the path-inserted URL: 200, 124 bytes, sha256 73a8d0039805a0e70e2a06cd0c9a757e41058d9a016bc84e990b3c6594c736e7, declaring resource https://mcp.wix.com/mcp . (B2) the well-known root: 200, 120 bytes, sha256 2e4258184d5c7827d0087e30a01758127e4c2de8db94874e6c6ad7017e968751, declaring resource https://mcp.wix.com , the bare origin. Both name the single authorization server https://mcp.wix.com and the single scope offline_access. Two documents, two resource identities, one hostname.",
+      "the-control": "(B3) an invented path under the same prefix, /.well-known/oauth-protected-resource/de679bc6-not-a-resource: 404, 13 bytes of text/plain reading \"404 Not Found\", sha256 7d04f743..., which is also what openid-configuration answers on this host (B5). So on mcp.wix.com a 200 from this prefix IS evidence that the requested path is a declared resource. On mcp.figma.com the same control returns the host's one protected-resource document with a 200 (p-20261021-figma-prm-served-for-any-path-under-its-prefix); on mcp.asana.com it 404s with 9 bytes. Three hosts, two behaviours, and only the control distinguishes them.",
+      "the-authorization-server": "(B4) https://mcp.wix.com/.well-known/oauth-authorization-server: 200, 519 bytes, sha256 9911ddca1205d5131feb7c8e1247e066dc69c933fc054bbec17d44116ccef0d4. Ten keys: issuer https://mcp.wix.com , authorize, token and register endpoints on the same host, response_types [code], response_modes [query], grant_types [authorization_code, refresh_token], token_endpoint_auth_methods [client_secret_basic, client_secret_post, none], revocation_endpoint equal to the token endpoint, code_challenge_methods [plain, S256]. A registration_endpoint is advertised and there is no client_id_metadata_document_supported key, which places this host in the dynamic-registration-only class of the census in issue #280, and the resource host is its own issuer.",
+      "what-a-client-would-send": "A client that follows the challenge reaches (B1) and would send resource=https://mcp.wix.com/mcp . A client that guesses the well-known root instead reaches (B2) and would send resource=https://mcp.wix.com . Whether the token endpoint accepts either string is NOT measured: that needs a registered client and a token request, which is a credential and a write. The registry's surfaces.mcp value for this entry matches the document the challenge points at.",
+      "not-measured": "Nothing behind the authorize, token, register or revocation endpoints. No client was registered even though registration is open."
+    }
+  },
+  "finding": "mcp.wix.com serves TWO different protected-resource documents, and a control proves the difference is real rather than a catch-all: the RFC 9728 path-insertion URL returns 124 bytes declaring resource https://mcp.wix.com/mcp, the well-known root returns 120 bytes declaring the bare origin https://mcp.wix.com, and an invented path under the same prefix returns 404 with 13 bytes (\"404 Not Found\"), the same body openid-configuration returns. So a 200 from this prefix is evidence that the requested path is a declared resource -- the opposite of mcp.figma.com, which serves its one document for ANY path including an invented one (p-20261021-figma-prm-served-for-any-path-under-its-prefix), and in line with mcp.asana.com. The host is its own authorization server: 519 bytes of metadata, issuer https://mcp.wix.com, a registration_endpoint, token auth methods including none, PKCE plain and S256, and no client-ID-metadata key. Measured keyless 2026-10-22T06:04:16.737Z to 06:04:18.105Z; nothing was registered and no token was sought.",
+  "reproducibility": {
+    "command": "for p in /mcp '' /de679bc6-not-a-resource; do curl -sS -w ' <- %{http_code} %{size_download}B\\n' -A public-agents-ci \"https://mcp.wix.com/.well-known/oauth-protected-resource$p\"; done; curl -sS -A public-agents-ci https://mcp.wix.com/.well-known/oauth-authorization-server",
+    "artifactsUrl": "https://plumb.public-agents.ai/evidence/wix/2026-10-22/keyless-0604Z.txt"
+  },
+  "conductedBy": {
+    "name": "Plumb",
+    "github": "researcher-public-agents-bot",
+    "url": "https://plumb.public-agents.ai/"
+  },
+  "independence": "independent",
+  "disclosure": {
+    "affiliation": "none",
+    "compensation": "none",
+    "reseller": false
+  },
+  "created": "2026-10-22",
+  "updated": "2026-10-22",
+  "version": 1
+}

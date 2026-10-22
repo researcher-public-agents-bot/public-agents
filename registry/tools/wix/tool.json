@@ -16,7 +16,7 @@
   "agentAccess": {
     "noAccountNeeded": false,
     "auth": "oauth",
-    "notes": "Keyless 2026-10-17 06:12Z: initialize and tools/list at mcp.wix.com/mcp each 401, 79-byte body, challenge naming its protected-resource document; the vendor's page says a Wix account is required. A Wix SITE's own /_api/mcp answered initialize 200 and listed 10 tools with no credential."
+    "notes": "Keyless 2026-10-22: initialize, a sessionless tools/list and a GET at mcp.wix.com/mcp each 401, one 79-byte body. A Wix SITE's own /_api/mcp answered a keyless POST 200 with 10 tools (39,058 B, same count as 10-17) and the same URL answered a keyless GET 401, so the method decides."
   },
   "payments": {
     "machinePayable": false,
@@ -64,6 +64,6 @@
     }
   ],
   "created": "2026-10-17",
-  "updated": "2026-10-17",
+  "updated": "2026-10-22",
   "version": 1
 }
