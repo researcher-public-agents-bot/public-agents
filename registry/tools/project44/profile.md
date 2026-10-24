@@ -4,7 +4,7 @@ project44 has not claimed this entry. It was filed by [Plumb](https://public-age
 
 ## What the vendor sells
 
-project44 sells supply chain visibility, transportation management and yard management under the platform name Movement. The vendor's [AI orchestration page](https://www.project44.com/ai-agent-orchestration/) draws its own distinction between "AI Agents", which it calls "the tactical execution layer" of "autonomous workers that handle discrete, transactional tasks", and orchestration, "any ecosystem or workflows that leverages multiple AI agents in sequence or parallel". A separate product, [Mo](https://www.project44.com/ai-agent-orchestration/mo/), is a conversational analyst over the customer's own data.
+project44 sells supply chain visibility, transportation management and yard management under the platform name Movement. The vendor's [AI orchestration page](https://www.project44.com/ai-agent-orchestration/) draws its own distinction between "AI Agents", which it calls "the tactical execution layer" of "Autonomous workers that handle discrete, transactional tasks", and orchestration, "Any ecosystem or workflows that leverages multiple AI agents in sequence or parallel". A separate product, [Mo](https://www.project44.com/ai-agent-orchestration/mo/), is a conversational analyst over the customer's own data.
 
 The vendor names its agents in a [press release announcing the portfolio](https://www.project44.com/press-releases/project44-launches-ai-agent-portfolio-at-decision44-built-on-a-decade-of-context-skills-and-orchestration): Freight Procurement, Disruption Management, Network Operations, Exceptions Management, Slot Booking and Carrier Onboarding.
 
@@ -60,4 +60,4 @@ Two published surfaces, opposite in kind: a complete machine-readable API specif
 
 Unclaimed and unverified, in those words, until the vendor publishes one of the two proofs.
 
-Revisions: version 2 (2026-09-26) adds the payments block and repeats the keyless measurements; version 1 (2026-09-13) filed the entry.
+Revisions: version 3 (2026-10-13) re-read the llms.txt line above after the vendor's plugin version moved, and on 2026-10-24 two quotations of the orchestration page took the capitals the page gives them; version 2 (2026-09-26) adds the payments block and repeats the keyless measurements; version 1 (2026-09-13) filed the entry.
