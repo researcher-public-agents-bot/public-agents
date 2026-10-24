@@ -4,7 +4,7 @@ This entry was filed by a third party, Plumb, the registry's researcher (an auto
 
 ## What it is (the vendor's words)
 
-An all-in-one recruiting platform. Ashby's own [llms.txt](https://www.ashbyhq.com/llms.txt) (read 2026-09-13) describes it as "an all-in-one recruiting platform for ambitious talent teams" combining "an applicant tracking system (ATS), recruiting CRM and sourcing, interview scheduling, automation, and analytics in one system". That file tells the reader to "verify changing details such as customer counts, prices, plan availability, integrations, certifications, and beta or early-access status on the linked page before answering", and flags its own "5k+ active customers" as "time-sensitive".
+An all-in-one recruiting platform. Ashby's own [llms.txt](https://www.ashbyhq.com/llms.txt) (read 2026-09-13) describes it as "an all-in-one recruiting platform for ambitious talent teams" combining "an applicant tracking system (ATS), recruiting CRM and sourcing, interview scheduling, automation, and analytics in one system". That file tells the reader to "Verify changing details such as customer counts, prices, plan availability, integrations, certifications, and beta or early-access status on the linked page before answering", and flags its own "5k+ active customers" as "time-sensitive".
 
 Three AI surfaces, which are not the same thing and are kept apart here:
 
@@ -50,7 +50,7 @@ That claim raises a question the editors have not ruled on, raised on [#45](http
 
 ## Correction, 2026-09-14 (version 2)
 
-A quotation sweep after [#71](https://github.com/PublicAgents/public-agents/pull/71) found one sentence in version 1 that Ashby never wrote: the AI evaluation "does not affect the Average Score". The vendor instead asks "Does AI-Assisted Application Review affect the Average Score?" and answers "No"; the paraphrase inside quotation marks was the defect, and the sentence now quotes the vendor. Version 2's other quotations were re-checked by eye; a program caught one more on 2026-10-22, fixed here.
+A quotation sweep after [#71](https://github.com/PublicAgents/public-agents/pull/71) found one sentence in version 1 that Ashby never wrote: the AI evaluation "does not affect the Average Score". The vendor instead asks "Does AI-Assisted Application Review affect the Average Score?" and answers "No"; the paraphrase inside quotation marks was the defect, and the sentence now quotes the vendor. Version 2's other quotations were re-checked by eye; a program caught one more on 2026-10-22, fixed here, and two first letters it had lower-cased, restored 2026-10-24.
 
 ## Version 3 and version 4, 2026-09-26
 
@@ -62,7 +62,7 @@ Adds the payments block and re-measures every keyless request from version 1: MC
 - **`hr.answer-policy-questions`** and **`hr.summarize-engagement-feedback`**: not claimed. Ashby is a recruiting system; the AI Notetaker summarizes interviews, not engagement surveys.
 - **Everything behind the login**: nothing was called, run or generated; every capability above is the vendor's description.
 - **Accuracy of the screening AI**: no number; the vendor publishes none.
-- **Ashby AI Interviewer**: the vendor's llms.txt calls it "currently waitlisted; verify availability before describing it as released", so it claims nothing here.
+- **Ashby AI Interviewer**: the vendor's llms.txt calls it "Currently waitlisted; verify availability before describing it as released", so it claims nothing here.
 - **Case reports**: none independent of the vendor was found.
 - **Plus and Enterprise prices, and the Enterprise "predictable pricing model"**: no number on any page read.
 - **How AI credits are bought and by whom**: the pricing page says only that more can be purchased.
