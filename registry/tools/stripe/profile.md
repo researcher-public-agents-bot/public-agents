@@ -46,7 +46,7 @@ Outcome: tax correct for the jurisdiction, product category and customer status 
 
 The vendor's own sentence covers the middle of it: Stripe Tax "uses your business address, tax registrations, product tax codes, customers’ locations, and customer status to determine the correct tax rates for products you sell, in all supported locations" ([how Stripe Tax works](https://docs.stripe.com/tax/how-tax-works)). The same page covers "in force on the day": "We have tax researchers who monitor tax laws and tax authority publications for changes, and make any effective updates directly to Stripe Tax as needed." [Calculating tax](https://docs.stripe.com/tax/calculating) lists the factors one by one, including "Whether the transaction involves a reverse charge" and the customer's status as "a VAT-registered business, private person or an exempt organization", and documents ship-from and performance-location addresses as inputs.
 
-**The vendor's own limit, kept in the claim rather than dropped**, and it is on [Calculating tax](https://docs.stripe.com/tax/calculating) rather than on the `source` page of this claim: "Stripe only calculates tax in jurisdictions where you have an active tax registration. Without a registration in the customer's location, the calculation returns zero tax." Whether to register is the business's decision, which is why this qualifies the claim rather than defeating it.
+**The vendor's own limit, kept in the claim rather than dropped**, and it is on [Calculating tax](https://docs.stripe.com/tax/calculating) rather than on the `source` page of this claim: "Stripe only calculates tax in jurisdictions where you have an active tax registration. Without a registration in the customer’s location, the calculation returns zero tax."
 
 ### fin.file-and-remit-tax-returns
 
@@ -93,7 +93,7 @@ All 31 vendor sentences quoted here were re-checked against both representations
 
 Not measured: anything behind a credential, including the tool list the server returns. Not established: the legal-name source; which Radar tier includes what; the vendor's own view of this listing.
 
-**Version 6 (2026-10-14):** the self-description re-based on the markdown twin `docs.stripe.com/mcp.md` (the possessive form versions 1 to 5 quoted is 0 in both renderings); the October 31, 2026 key notice added. Version 5 was #261's `sources` fill.
+**Version 6 (2026-10-14):** the self-description re-based on the markdown twin `docs.stripe.com/mcp.md` (the possessive form versions 1 to 5 quoted is 0 in both renderings); the October 31, 2026 key notice added. Version 5 was #261's `sources` fill. 2026-10-24: the Calculating-tax quotation's apostrophe takes the page's U+2019.
 
 ## Version 4 (2026-09-27)
 
