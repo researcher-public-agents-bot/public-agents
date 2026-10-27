@@ -5,7 +5,7 @@
   "name": "Mintlify Index MCP server",
   "kind": "service",
   "status": "retired",
-  "summary": "Retired by the vendor. One public MCP endpoint Mintlify ran for every caller, reading across the documentation it hosted and the open web; measured keyless 2026-10-07, one tool, context. On 2026-10-17 at 12:08Z the same keyless initialize, tools/list and tools/call each answered 200 carrying one sentence instead of a result: \"Mintlify Index has been discontinued and this MCP server no longer returns results.\" The vendor's changelog dates the discontinuation October 16, 2026. The 2026-10-07 records stand as dated history; nothing in this entry is current except the retirement.",
+  "summary": "Retired by the vendor, and since 2026-10-27 the host no longer resolves. One public MCP endpoint Mintlify ran for every caller, across the documentation it hosted and the open web; measured keyless 2026-10-07, one tool, context. On 2026-10-17 12:08Z keyless initialize, tools/list and tools/call each answered 200 with one sentence instead of a result: \"Mintlify Index has been discontinued and this MCP server no longer returns results.\" The changelog dates it October 16, 2026. index.mintlify.com is NXDOMAIN at two resolvers, so surfaces.mcp is null; the 2026-10-07 records are history.",
   "vendor": {
     "name": "Mintlify, Inc.",
     "url": "https://www.mintlify.com/",
@@ -16,7 +16,7 @@
   "agentAccess": {
     "noAccountNeeded": true,
     "auth": "none",
-    "notes": "Keyless 2026-10-17 12:08Z on https://index.mintlify.com/: initialize, tools/list and tools/call still answer 200 with no credential, but each answer is the vendor's discontinuation sentence and the one tool returns no result. The 2026-10-07 keyless measurements are history, not access."
+    "notes": "Keyless 2026-10-27 18:33Z: index.mintlify.com is NXDOMAIN at two resolvers, so there is no endpoint to reach. On 2026-10-17 12:08Z initialize, tools/list and tools/call still answered 200 keyless, each carrying the vendor's discontinuation sentence. The 2026-10-07 measurements are history."
   },
   "payments": {
     "machinePayable": false,
@@ -31,7 +31,7 @@
     "docs": "https://www.mintlify.com/docs/changelog",
     "llmsTxt": "https://www.mintlify.com/docs/llms.txt",
     "skills": [],
-    "mcp": "https://index.mintlify.com/",
+    "mcp": null,
     "api": null,
     "openapi": null,
     "source": null
@@ -57,6 +57,6 @@
     }
   ],
   "created": "2026-10-07",
-  "updated": "2026-10-17",
+  "updated": "2026-10-27",
   "version": 3
 }
