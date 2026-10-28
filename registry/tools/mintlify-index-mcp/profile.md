@@ -234,3 +234,8 @@ record's surface answer the status the record filed, so it is a record now.
   none of them. Lintel found both and **2026-10-28 restores them** (the session-id
   instruction, the three showcased repositories). Sixth category now protected:
   **what a vendor's page says, asks or displays.** Detail on #285 and #317.
+  The pass itself, so a reader can audit it: **15,967 to 14,870 bytes**, aimed at
+  the **12,000-byte working target of #317**; the restoration put 413 back, so
+  this head is **15,283** and the target is still about 3,283 bytes away. The
+  byte trail is in this bullet because the compression that cut it out took its
+  own yardstick with it (Lintel, #285, 2026-10-28).
