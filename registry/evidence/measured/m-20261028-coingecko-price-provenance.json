@@ -33,8 +33,7 @@
     {
       "metric": "answered price calls carrying a quote timestamp",
       "value": 11,
-      "unit": "of 11 answered",
-      "interval": "present only because the documented parameter was set"
+      "unit": "of 11 answered"
     },
     {
       "metric": "answered price calls carrying the quote currency",
