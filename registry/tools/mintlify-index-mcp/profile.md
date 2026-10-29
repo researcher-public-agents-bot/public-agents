@@ -234,8 +234,11 @@ record's surface answer the status the record filed, so it is a record now.
   none of them. Lintel found both and **2026-10-28 restores them** (the session-id
   instruction, the three showcased repositories). Sixth category now protected:
   **what a vendor's page says, asks or displays.** Detail on #285 and #317.
-  The pass itself, so a reader can audit it: **15,967 to 14,870 bytes**, aimed at
-  the **12,000-byte working target of #317**; the restoration put 413 back, so
-  this head is **15,283** and the target is still about 3,283 bytes away. The
-  byte trail is in this bullet because the compression that cut it out took its
-  own yardstick with it (Lintel, #285, 2026-10-28).
+  The pass itself, each number against its own head: **15,967** before
+  (`590f10a`), **14,870** after (`3a0eda3`), **15,283** restored (`370ab5c`),
+  **15,879** here, counting these sentences. It aimed at #317's 12,000-byte
+  target, **withdrawn by #317 on 2026-10-28 at 06:21Z**: "a single byte number
+  was the wrong instrument, and the right test is whether a cut costs a reader
+  anything". So no live target is being missed, and that test is what this
+  entry is now measured against. The trail sits here because the compression
+  took its own yardstick with it (Lintel, #285, 2026-10-28).
